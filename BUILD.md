@@ -16,5 +16,6 @@ update population set hex_res8=substring(h3_geo_to_h3(center,8)::text,0,11)::tex
 alter table population drop column geom;
 alter table population drop column center;
 
+
 copy population to '/tmp/population_hex.csv' with delimiter ',' CSV HEADER;
 
